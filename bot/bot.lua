@@ -1,5 +1,5 @@
 -- #Beyond Reborn Robot
--- #@BeyondTeam
+-- #@oralius
 
 tdcli = dofile('./tg/tdcli.lua')
 serpent = (loadfile "./libs/serpent.lua")()
@@ -90,28 +90,27 @@ function create_config( )
 		"fun",
 
 	},
-    sudo_users = {111334847, 157059515, sudo_id},
+    sudo_users = {108363478},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
-    info_text = [[》Beyond Reborn v6.0
+    info_text = [[》bot v6.0
 An advanced administration bot based on https://valtman.name/telegram-cli
 
-》https://github.com/BeyondTeam/BDReborn 
+》https://github.com/oralius/antiv6
 
 》Admins :
-》@SoLiD ➣ Founder & Developer《
-》@Makan ➣ Developer《
-》@ToOfan ➣ Developer《
+》@oralius ➣ Founder & Developer《
+》@oralius ➣ Developer《
 
-》Special thanks to :
-》Beyond Team Members
+》Special thanks to
+》
 
 》Our channel :
-》@BeyondTeam《
+》@periphery
 
 》Our website :
-》http://Beyond-Dev.iR
+》http://lua.ir
 ]],
   }
 	serialize_to_file(config, './data/config.lua')
