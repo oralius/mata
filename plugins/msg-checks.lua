@@ -335,7 +335,7 @@ and lock_link == "yes" then
 kick_user(user, chat)
    end
 end
-local tag_caption = msg.media.caption:match("@") or msg.media.caption:match("#")
+local tag_caption = msg.media.caption:match("@") or msg.media.caption:match("&")
 if tag_caption and lock_tag == "yes" then
  if is_channel then
  del_msg(chat, tonumber(msg.id))
