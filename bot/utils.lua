@@ -1,4 +1,4 @@
-﻿--Begin Utils.lua By #oralius :)
+﻿--Begin Utils.lua By #BeyondTeam :)
  local clock = os.clock
 function sleep(time)  -- seconds
   local t0 = clock()
