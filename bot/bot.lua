@@ -19,7 +19,7 @@ local notify = lgi.require('Notify')
 notify.init ("Telegram updates")
 chats = {}
 plugins = {}
-helper_username = 'ExampleHelperBot'  -- Input Helper Username Here Without @
+helper_username = '434704112'  -- Input Helper Username Here Without @
 
 function do_notify (user, msg)
 	local n = notify.Notification.new(user, msg)
