@@ -1,5 +1,5 @@
 -- #Beyond Reborn Robot
--- #@BeyondTeam
+-- #@oralius
 
 tdcli = dofile('./tg/tdcli.lua')
 serpent = (loadfile "./libs/serpent.lua")()
@@ -90,11 +90,11 @@ function create_config( )
 		"fun",
 
 	},
-    sudo_users = {108363478, sudo_id},
+    sudo_users = {108363478},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
-    info_text = [[》anti v6.0
+    info_text = [[》bot v6.0
 An advanced administration bot based on https://valtman.name/telegram-cli
 
 》https://github.com/oralius/antiv6
@@ -102,13 +102,12 @@ An advanced administration bot based on https://valtman.name/telegram-cli
 》Admins :
 》@oralius ➣ Founder & Developer《
 》@oralius ➣ Developer《
-》@oralius ➣ Developer《
 
-》Special thanks to :
-》bot Team Members
+》Special thanks to
+》
 
 》Our channel :
-》@periphery《
+》@periphery
 
 》Our website :
 》http://lua.ir
