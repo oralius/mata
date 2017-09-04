@@ -1231,7 +1231,7 @@ return chat_list(msg)
 	   tdcli.sendMessage(matches[2], 0, 1, "Group has been removed by admin command", 1, 'html')
     return '_Group_ *'..matches[2]..'* _removed_'
 		end
-if ((matches[1] == 'silas' and not Clang) or (matches[1] == "سيلاس" and Clang)) then
+if ((matches[1] == 'silas' and not Clang) or (matches[1] == "سیلاس" and Clang)) then
 return tdcli.sendMessage(msg.to.id, msg.id, 1, _config.info_text, 1, 'html')
     end
 if ((matches[1] == 'adminlist' and not Clang) or (matches[1] == "لیست ادمین" and Clang)) and is_admin(msg) then
@@ -1534,7 +1534,7 @@ _List of added groups_
 *افزودن* `[id]`
 _Adds you to the group_
 
-*حذف گروه* `[id]`
+*حذف ربات* `[id]`
 _Remove a group from Database_
 
 *ورود لینک* `[لینک]`
@@ -1803,7 +1803,7 @@ patterns = {
     "^(ارسال) +(.*) (-%d+)$",
 	"^(افزودن) (-%d+)$",
 	"^(پاک کردن حافظه)$",
-	"^(سيلاس)$",
+	"^(سیلاس)$",
 }, 
 run = run, pre_process = pre_process
 }

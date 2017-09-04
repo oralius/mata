@@ -1,6 +1,6 @@
 
---Begin Fun.lua By @BeyondTeam
---Special Thx To @To0fan
+--Begin Fun.lua By @oralius
+--Special Thx To @periphery
 --------------------------------
 
 local function run_bash(str)
@@ -235,7 +235,7 @@ local Clang = redis:get(Chash)
       return nil
       else
   local url = "http://tts.baidu.com/text2audio?lan=en&ie=UTF-8&text="..textc
-  local file = download_to_file(url,'BD-Reborn.mp3')
+  local file = download_to_file(url,'ACTIVE-BOT.mp3')
  				tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, msg_caption, dl_cb, nil)
    end
 end
@@ -285,7 +285,7 @@ end
 		tdcli.sendDocument(msg.to.id, 0, 0, 1, nil, file, msg_caption, dl_cb, nil)
 	end
 --------------------------------
-	if (matches[1]:lower() == 'عکس' and not Clang) or (matches[1]:lower() == 'عکس' and Clang) then
+	if (matches[1]:lower() == 'تصویر' and not Clang) or (matches[1]:lower() == 'تصویر' and Clang) then
 		local eq = URL.escape(matches[2])
 		local w = "500"
 		local h = "500"
@@ -396,7 +396,7 @@ _دریافت اب وهوا_
 
 *شما میتوانید از [!/#] در اول دستورات برای اجرای آنها بهره بگیرید*
 
-موفق باشید ;)]]
+*برای خرید ربات به ایدی زیر پیام دهید*;)]]
 end
 return helpfun_en..msg_caption
 end
@@ -425,7 +425,7 @@ _Example:_
 *استیکر* `[متن]`
 _Convert text to sticker_
 
-*عکس* `[متن]`
+*تصویر* `[متن]`
 _Convert text to photo_
 
 *ماشین حساب* `[معادله]`
@@ -443,7 +443,7 @@ _Convert text to photo_
 *اب و هوا* `[شهر]`
 _Get weather_
 
-*Good luck ;)*]]
+*براي خريد ربات به ايدي زير پيام دهيد ;)*]]
 else
 
 helpfun_fa = [[
@@ -484,7 +484,7 @@ _تبدیل استیکر‌به عکس_
 *اب و هوا* `[شهر]`
 _دریافت اب وهوا_
 
-موفق باشید ;)]]
+*برای خرید ربات به ایدی زیر پیام دهید* ;)]]
 end
 return helpfun_fa..msg_caption
 end
@@ -517,10 +517,10 @@ return {
 		"^(ساعات شرعی)$",
 		"^(ترجمه) ([^%s]+) (.*)$",
 		"^(لینک کوتاه) (.*)$",
-		"^(عکس) (.+)$",
+		"^(تصویر) (.+)$",
 		"^(استیکر) (.+)$"
 		}, 
 	run = run,
 	}
 
---#by @BeyondTeam :)
+--#by @oralius :)
