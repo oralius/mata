@@ -97,7 +97,7 @@ function create_config( )
     info_text = [[》bot v6.0
 An advanced administration bot based on https://valtman.name/telegram-cli
 
-》https://github.com/oralius
+》https://github.com/oralius/anti
 
 》Admins :
 》@oralius ➣ Founder & Developer《
