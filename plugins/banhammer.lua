@@ -29,7 +29,7 @@ if is_gbanned(data.id_) then
      if not lang then
 		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_User_ "..user_name.." *[ "..data.id_.." ]* _is globally banned_", 0, "md")
     else
-		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_کاربر_ "..user_name.." *[ "..data.id_.." ]* _از تمام گروه های ربات محروم است_", 0, "md")
+		tdcli.sendMessage(arg.chat_id, arg.msg_id, 0, "_کاربر_ "..user_name.." *[ "..data.id_.." ]* _از تمام گروه های ربات به صورت جهانی محروم است_", 0, "md")
    end
 kick_user(data.id_, arg.chat_id)
      end
@@ -159,7 +159,7 @@ if administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] 
     if not lang then
      return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already_ *silent*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل توانایی چت کردن رو نداشت*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل اجازه چت کردن را نداشت*", 0, "md")
      end
    end
 administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = user_name
@@ -167,7 +167,7 @@ administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = u
   if not lang then
      return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _added to_ *silent users list*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *توانایی چت کردن رو از دست داد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *مجوز چت کردن در این گروه را از دست داد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -189,7 +189,7 @@ if not administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not_ *silent*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل توانایی چت کردن را داشت*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مجوز چت کردن را داشت*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = nil
@@ -197,7 +197,7 @@ administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = n
     if not lang then
      return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _removed from_ *silent users list*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *توانایی چت کردن رو به دست آورد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *اجازه چت کردن را به دست آورد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -280,7 +280,7 @@ if not is_gbanned(data.id_) then
     if not lang then
      return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *globally unbanned*", 0, "md")
    else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از محرومیت گروه های ربات خارج شد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از محرومیت جهانی گروه های ربات خارج شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -410,7 +410,7 @@ if administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] 
     if not lang then
      return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already_ *silent*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل توانایی چت کردن رو نداشت*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل اجازه چت کردن را نداشت*", 0, "md")
      end
    end
 administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = user_name
@@ -418,7 +418,7 @@ administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = u
   if not lang then
      return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _added to_ *silent users list*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *توانایی چت کردن رو از دست داد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *اجازه چت کردن را از دست داد*", 0, "md")
    end
 end
   if cmd == "unsilent" then
@@ -426,7 +426,7 @@ if not administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not_ *silent*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل توانایی چت کردن را داشت*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل اجازه چت کردن را داشت*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = nil
@@ -434,7 +434,7 @@ administration[tostring(arg.chat_id)]['is_silent_users'][tostring(data.id_)] = n
     if not lang then
      return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _removed from_ *silent users list*", 0, "md")
   else
-     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *توانایی چت کردن رو به دست آورد*", 0, "md")
+     return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *اجازه چت کردن را بدست اورد*", 0, "md")
    end
 end
   if cmd == "banall" then
@@ -794,7 +794,7 @@ end
    if not lang then
    return tdcli.sendMessage(msg.to.id, "", 0, "_User "..matches[2].." is already silent_", 0, "md")
    else
-   return tdcli.sendMessage(msg.to.id, "", 0, "*کاربر "..matches[2].." از قبل توانایی چت کردن رو نداشت*", 0, "md")
+   return tdcli.sendMessage(msg.to.id, "", 0, "*کاربر "..matches[2].." از قبل اجازه چت کردن را نداشت*", 0, "md")
         end
      end
 data[tostring(chat)]['is_silent_users'][tostring(matches[2])] = ""
@@ -802,7 +802,7 @@ data[tostring(chat)]['is_silent_users'][tostring(matches[2])] = ""
     if not lang then
  return tdcli.sendMessage(msg.to.id, msg.id, 0, "_User "..matches[2].." added to silent users list_", 0, "md")
   else
- return tdcli.sendMessage(msg.to.id, msg.id, 0, "*کاربر "..matches[2].." توانایی چت کردن رو از دست داد*", 0, "md")
+ return tdcli.sendMessage(msg.to.id, msg.id, 0, "*کاربر "..matches[2].." اجازه چت کردن را از دست داد*", 0, "md")
       end
    end
   if matches[2] and not string.match(matches[2], '^%d+$') then
@@ -825,7 +825,7 @@ end
      if not lang then
      return tdcli.sendMessage(msg.to.id, "", 0, "_User "..matches[2].." is not silent_", 0, "md")
    else
-     return tdcli.sendMessage(msg.to.id, "", 0, "*کاربر "..matches[2].." از قبل توانایی چت کردن رو داشت*", 0, "md")
+     return tdcli.sendMessage(msg.to.id, "", 0, "*کاربر "..matches[2].." از قبل اجازه چت کردن را داشت*", 0, "md")
         end
      end
 data[tostring(chat)]['is_silent_users'][tostring(matches[2])] = nil
@@ -833,7 +833,7 @@ data[tostring(chat)]['is_silent_users'][tostring(matches[2])] = nil
    if not lang then
  return tdcli.sendMessage(msg.to.id, msg.id, 0, "_User "..matches[2].." removed from silent users list_", 0, "md")
   else
- return tdcli.sendMessage(msg.to.id, msg.id, 0, "*کاربر "..matches[2].." توانایی چت کردن رو به دست آورد*", 0, "md")
+ return tdcli.sendMessage(msg.to.id, msg.id, 0, "*کاربر "..matches[2].." اجازه چت کردن را بدست آورد*", 0, "md")
       end
    end
   if matches[2] and not string.match(matches[2], '^%d+$') then
