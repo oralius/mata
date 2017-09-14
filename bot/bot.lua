@@ -97,20 +97,20 @@ function create_config( )
     info_text = [[》bot v6.0
 An advanced administration bot based on https://valtman.name/telegram-cli
 
-》https://github.com/oralius/anti
-
+》https://github.com/oralius/anti.*ربات ضد لينك و ضد تبليغات در گروهها با قابليت قفل كامل چت و تمام موارد ارسالي.*
 》Admins :
-》@oralius ➣ Founder & Developer《
-》@oralius ➣ Developer《
+》@oralius ➣ FounderDeveloper
+》@oralius ➣ Developer
 
-》Special thanks to
-》
-
+》*لينك ورود براي خريد ربات*
+》https://t.me/joinchat/AAAAAD6MIyWG9-qoZjbc_g
 》Our channel :
 》@periphery
+》*براي خريد اين ربات به ايدي زير پيام دهيد* :
 
-》Our website :
-》http://lua.ir
+》@oralius 
+
+》
 ]],
   }
 	serialize_to_file(config, './data/config.lua')
