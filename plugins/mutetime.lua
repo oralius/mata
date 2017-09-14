@@ -7,7 +7,7 @@ local function pre_process(msg)
  end
  
 local function run(msg, matches)
-  if matches[1]:lower() == 'st' and is_mod(msg) then
+  if matches[1]:lower() == 'mt' and is_mod(msg) then
      local hash = 'mute_time:'..msg.chat_id_
      if not matches[2] then
 		return "_لطفا ساعت و دقیقه را وارد نمایید!_"
@@ -21,7 +21,7 @@ local function run(msg, matches)
      return "*⛔️گروه به مدت: \n`"..matches[2].."` ساعت\n`"..matches[3].."` دقیقه \nتعطیل میباشد.*براي خريد ربات به ايدي زير پيام دهيد️"
     end
   end
-  if matches[1]:lower() == 'unst' and is_mod(msg) then
+  if matches[1]:lower() == 'unmt' and is_mod(msg) then
      local hash = 'mute_time:'..msg.chat_id_
      redis:del(hash)
      return "*✅گروه برای ارسال پیام کاربران باز شد.*براي خريد ربات به ايدي زير پيام دهيد"
@@ -29,9 +29,9 @@ local function run(msg, matches)
 end
 return {
    patterns = {
-      '^[/!#]([Ss][Tt])$',
-      '^[/!#]([Uu][Nn][Ss][Tt])$',
-	  '^[/!#]([Ss][Tt]) (%d+) (%d+)$',
+      '^[/!#]([Mm][Tt])$',
+      '^[/!#]([Uu][Nn][Mm][Tt])$',
+	  '^[/!#]([Mm][Tt]) (%d+) (%d+)$',
  },
   run = run,
   pre_process = pre_process
