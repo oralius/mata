@@ -6,7 +6,7 @@ local lang = redis:get(hash)
    if not lang then
         return '_You are not bot admin_'
 else
-     return 'شما مدیر ربات نمیباشید'
+     return '*شما مالک ربات نمیباشید*'
     end
 end
     local data = load_data(_config.moderation.data)
@@ -14,7 +14,7 @@ end
 if not lang then
    return '_Group is already added_'
 else
-return 'گروه در لیست گروه های مدیریتی ربات هم اکنون موجود است'
+return '*گروه در لیست گروه های ربات ثبت بوده است*'
   end
 end
         -- create data array in moderation.json
@@ -75,7 +75,7 @@ end
     if not lang then
   return '*Group has been added*'..msg_caption
 else
-  return 'گروه با موفقیت به لیست گروه های مدیریتی ربات افزوده شد'..msg_caption
+  return '*گروه به صورت کامل در این ربات افزوده شد*'..msg_caption
 end
 end
 
@@ -87,7 +87,7 @@ local lang = redis:get(hash)
      if not lang then
         return '_You are not bot admin_'
    else
-        return 'شما مدیر ربات نمیباشید'
+        return '*شما مالک ربات نمیباشید*'
     end
    end
     local data = load_data(_config.moderation.data)
@@ -96,7 +96,7 @@ local lang = redis:get(hash)
   if not lang then
     return '_Group is not added_'
 else
-    return 'گروه به لیست گروه های مدیریتی ربات اضافه نشده است'
+    return '*گروه به لیست گروه های این ربات افزوده نشده است*'
    end
   end
 
@@ -173,7 +173,7 @@ local lang = redis:get(hash)
   if not lang then
     return "_Group is not added_"
  else
-    return "گروه به لیست گروه های مدیریتی ربات اضافه نشده است"
+    return "*گروه به لیست گروه های این ربات افزوده نشده است*"
   end
  end
   -- determine if table is empty
@@ -206,7 +206,7 @@ local lang = redis:get(hash)
 if not lang then
     return "_Group is not added_"..msg_caption
 else
-return "گروه به لیست گروه های مدیریتی ربات اضافه نشده است"
+return "*گروه به لیست گروه های این ربات افزوده نشده است*"
   end
 end
   -- determine if table is empty
@@ -240,7 +240,7 @@ if not tonumber(data.sender_user_id_) then return false end
   if not lang then
     return tdcli.sendMessage(data.chat_id_, "", 0, "_Group is not added_", 0, "md")
 else
-    return tdcli.sendMessage(data.chat_id_, "", 0, "_گروه به لیست گروه های مدیریتی ربات اضافه نشده است_", 0, "md")
+    return tdcli.sendMessage(data.chat_id_, "", 0, "_*گروه به لیست گروه های این ربات افزوده نشده است*_", 0, "md")
      end
   end
     if cmd == "setwhitelist" then
@@ -2396,7 +2396,7 @@ local mutes = data[tostring(target)]["mutes"]
  text = " *Group Mute List* : \n_Mute all : _ *"..mutes.mute_all.."*\n_Mute gif :_ *"..mutes.mute_gif.."*\n_Mute text :_ *"..mutes.mute_text.."*\n_Mute inline :_ *"..mutes.mute_inline.."*\n_Mute game :_ *"..mutes.mute_game.."*\n_Mute photo :_ *"..mutes.mute_photo.."*\n_Mute video :_ *"..mutes.mute_video.."*\n_Mute audio :_ *"..mutes.mute_audio.."*\n_Mute voice :_ *"..mutes.mute_voice.."*\n_Mute sticker :_ *"..mutes.mute_sticker.."*\n_Mute contact :_ *"..mutes.mute_contact.."*\n_Mute forward :_ *"..mutes.mute_forward.."*\n_Mute location :_ *"..mutes.mute_location.."*\n_Mute document :_ *"..mutes.mute_document.."*\n_Mute TgService :_ *"..mutes.mute_tgservice.."*\n_Mute Keyboard :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @activebots\n*Group Language* : *EN*"
 else
 local mutes = data[tostring(target)]["mutes"] 
- text = " *لیست بیصدا ها* : \n_تعطیل بودن گپ : _ *"..mutes.mute_all.."*\n_پاک شدن تصاویر گيف :_ *"..mutes.mute_gif.."*\n_پاک شدن متن :_ *"..mutes.mute_text.."*\n_پاک شدن بنر شيشه اي:_ *"..mutes.mute_inline.."*\n_پاک شدن بازی ها :_ *"..mutes.mute_game.."*\n_پاک شدن عکس :_ *"..mutes.mute_photo.."*\n_پاک شدن فیلم :_ *"..mutes.mute_video.."*\n_پاک شدن آهنگ :_ *"..mutes.mute_audio.."*\n_پاک شدن صدا :_ *"..mutes.mute_voice.."*\n_پاک شدن استيكر :_ *"..mutes.mute_sticker.."*\n_پاک شدن مخاطب :_ *"..mutes.mute_contact.."*\n_پاک شدن فوروارد :_ *"..mutes.mute_forward.."*\n_پاک شدن موقعیت :_ *"..mutes.mute_location.."*\n_پاک شدن اسناد :_ *"..mutes.mute_document.."*\n_پاک شدن خدمات تلگرام :_ *"..mutes.mute_tgservice.."*\n_پاک شدن صفحه کلید :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @activebots\n_زبان سوپرگروه_ : *FA*"
+ text = " *لیست پاک شدن* : \n_تعطیل بودن گپ : _ *"..mutes.mute_all.."*\n_پاک شدن تصاویر گيف :_ *"..mutes.mute_gif.."*\n_پاک شدن متن :_ *"..mutes.mute_text.."*\n_پاک شدن بنر شيشه اي:_ *"..mutes.mute_inline.."*\n_پاک شدن بازی ها :_ *"..mutes.mute_game.."*\n_پاک شدن عکس :_ *"..mutes.mute_photo.."*\n_پاک شدن فیلم :_ *"..mutes.mute_video.."*\n_پاک شدن آهنگ :_ *"..mutes.mute_audio.."*\n_پاک شدن صدا :_ *"..mutes.mute_voice.."*\n_پاک شدن استيكر :_ *"..mutes.mute_sticker.."*\n_پاک شدن مخاطب :_ *"..mutes.mute_contact.."*\n_پاک شدن فوروارد :_ *"..mutes.mute_forward.."*\n_پاک شدن موقعیت :_ *"..mutes.mute_location.."*\n_پاک شدن اسناد :_ *"..mutes.mute_document.."*\n_پاک شدن خدمات تلگرام :_ *"..mutes.mute_tgservice.."*\n_پاک شدن صفحه کلید :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @activebots\n_زبان سوپرگروه_ : *FA*"
 end
 return text
 end
@@ -2709,9 +2709,9 @@ if ((matches[2] == "join" and not Clang) or (matches[2] == "ورود" and Clang)
 return unlock_join(msg, data, target)
 end
 end
-if ((matches[1] == "mute" and not Clang) or (matches[1] == "بیصدا" and Clang)) and is_mod(msg) then
+if ((matches[1] == "mute" and not Clang) or (matches[1] == "پاک شدن" and Clang)) and is_mod(msg) then
 local target = msg.to.id
-if ((matches[2] == "all" and not Clang) or (matches[2] == "گپ" and Clang)) then
+if ((matches[2] == "all" and not Clang) or (matches[2] == "همه" and Clang)) then
 return mute_all(msg, data, target)
 end
 if ((matches[2] == "gif" and not Clang) or (matches[2] == "گیف" and Clang)) then
@@ -2761,9 +2761,9 @@ return mute_keyboard(msg ,data, target)
 end
 end
 
-if ((matches[1] == "unmute" and not Clang) or (matches[1] == "باصدا" and Clang)) and is_mod(msg) then
+if ((matches[1] == "unmute" and not Clang) or (matches[1] == "پاک نشدن" and Clang)) and is_mod(msg) then
 local target = msg.to.id
-if ((matches[2] == "all" and not Clang) or (matches[2] == "گپ" and Clang)) then
+if ((matches[2] == "all" and not Clang) or (matches[2] == "همه" and Clang)) then
 return unmute_all(msg, data, target)
 end
 if ((matches[2] == "gif" and not Clang) or (matches[2] == "گیف" and Clang)) then
@@ -3133,7 +3133,7 @@ end
 if ((matches[1] == "settings" and not Clang) or (matches[1] == "تنظیمات" and Clang)) and is_mod(msg) then
 return group_settings(msg, target)
 end
-if ((matches[1] == "mutelist" and not Clang) or (matches[1] == "لیست بیصدا" and Clang)) and is_mod(msg) then
+if ((matches[1] == "mutelist" and not Clang) or (matches[1] == "لیست پاک شدن ها" and Clang)) and is_mod(msg) then
 return mutes(msg, target)
 end
 if ((matches[1] == "modlist" and not Clang) or (matches[1] == "لیست مدیران" and Clang)) and is_mod(msg) then
@@ -3578,10 +3578,10 @@ _If This Actions Lock, Bot Check Actions And Delete Them_
 *باز کردن* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |هرزنامه | پیام مکرر | فونت | فراخوانی | سنجاق]`
 _If This Actions Unlock, Bot Not Delete Them_
 
-*بیصدا* `[همه | تصاویر متحرک | عکس | اسناد | برچسب | صفحه کلید | فیلم | متن | نقل قول | موقعیت | اهنگ | صدا | مخاطب | کیبورد شیشه ای|بازی|خدمات تلگرام]`
+*پاک شدن* `[همه | تصاویر متحرک | عکس | اسناد | برچسب | صفحه کلید | فیلم | متن | نقل قول | موقعیت | اهنگ | صدا | مخاطب | کیبورد شیشه ای|بازی|خدمات تلگرام]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
 
-*باصدا* `[همه | تصاویر متحرک | عکس | اسناد | برچسب | صفحه کلید | فیلم | متن | نقل قول | موقعیت | اهنگ | صدا | مخاطب | کیبورد شیشه ای|بازی|خدمات تلگرام]`
+*پاک نشدن* `[همه | تصاویر متحرک | عکس | اسناد | برچسب | صفحه کلید | فیلم | متن | نقل قول | موقعیت | اهنگ | صدا | مخاطب | کیبورد شیشه ای|بازی|خدمات تلگرام]`
 _If This Actions Unlock, Bot Not Delete Them_
 
 *تنظیم*`[قوانین | نام | لینک | درباره | خوشامد]`
@@ -3608,7 +3608,7 @@ _Enable Or Disable Group Welcome_
 *تنظیمات*
 _Show Group Settings_
 
-*لیست بیصدا*
+*لیست پاک کردن ها*
 _Show Mutes List_
 
 *لیست سکوت*
@@ -3730,11 +3730,11 @@ _نمایش نام کاربر, نام کاربری و اطلاعات حساب_
 *باز کردن* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |اسپم | رگبار| فونت | فراخوانی | سنجاق]`
 *در صورت قفل نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد*
 
-*بیصدا* [ |گپ | گيف | متن | عكس | فيلم | اهنگ | صدا | استيكر | مخاطب | فوروارد | موقعيت | اسناد | خدمات تلگرام | بنرشيشه اي | بازي | بازي | صفحه كليد |]
-*در صورت بیصدا بودن ربات موارد ارسالي را پاك ميكند*
+*پاک شدن* [ |همه | گيف | متن | عكس | فيلم | اهنگ | صدا | استيكر | مخاطب | فوروارد | موقعيت | اسناد | خدمات تلگرام | بنرشيشه اي | بازي | بازي | صفحه كليد |]
+*در صورت پاک شدن بودن ربات موارد ارسالي را پاك ميكند*
 
-*باصدا* `[ | گپ | گيف | متن | عكس | فيلم | اهنگ | صدا | استيكر | مخاطب | فوروارد | موقعيت | اسناد | خدمات تلگرام | بنرشيشه اي | بازي | صفحه كليد ]`
-*در صورت باصدا بودن ربات موارد ارسالي را پاك نميكند*
+*پاک نشدن* `[ | همه | گيف | متن | عكس | فيلم | اهنگ | صدا | استيكر | مخاطب | فوروارد | موقعيت | اسناد | خدمات تلگرام | بنرشيشه اي | بازي | صفحه كليد ]`
+*در صورت پاک نشدن بودن ربات موارد ارسالي را پاك نميكند*
 
 *تنظیم*`[قوانین | نام | لینک | درباره | خوشامد]`
 _ربات آنهارا ثبت خواهد کرد_
@@ -3763,7 +3763,7 @@ _فعال یا غیرفعال کردن خوشامد گویی_
 *تنظیمات*
 _نمایش تنظیمات گروه_
 
-*لیست بیصدا*
+*لیست پاک شدن ها*
 _نمایش فهرست بیصدا های گروه_
 
 *لیست سکوت*
@@ -4056,8 +4056,8 @@ patterns ={
 '^(حذف مدیر) (.*)$',
 '^(قفل) (.*)$',
 '^(باز کردن) (.*)$',
-'^(بیصدا) (.*)$',
-'^(باصدا) (.*)$',
+'^(پاک شدن) (.*)$',
+'^(پاک نشدن) (.*)$',
 '^(لینک جدید)$',
 '^(لینک جدید) (خصوصی)$',
 '^(اطلاعات گروه)$',
@@ -4077,7 +4077,7 @@ patterns ={
 '^(تنظیم نام) (.*)$',
 '^(تنظیم درباره) (.*)$',
 '^(لیست فیلتر)$',
-'^(لیست بیصدا)$',
+'^(لیست پاک شدن ها)$',
 '^(لیست مالکان)$',
 '^(لیست مدیران)$',
 '^(راهنما)$',
