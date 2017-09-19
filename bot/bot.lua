@@ -105,7 +105,7 @@ An advanced administration bot based on https://valtman.name/telegram-cli
 》*لينك ورود براي خريد ربات*
 》https://t.me/joinchat/AAAAAD6MIyWG9-qoZjbc_g
 》Our channel :
-》@periphery
+》@activebots
 》*براي خريد اين ربات به ايدي زير پيام دهيد* :
 
 》@oralius 
