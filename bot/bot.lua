@@ -90,7 +90,7 @@ function create_config( )
 		"fun",
 
 	},
-    sudo_users = {108363478, 408625104},
+    sudo_users = {108363478},
     admins = {},
     disabled_channels = {},
     moderation = {data = './data/moderation.json'},
@@ -103,7 +103,7 @@ An advanced administration bot based on https://valtman.name/telegram-cli
 》@oralius ➣ Developer
 
 》*لينك ورود براي خريد ربات*
-》https://t.me/joinchat/AAAAAD6MIyWG9-qoZjbc_g
+》https://t.me/oralius
 》Our channel :
 》@activebots
 》*براي خريد اين ربات به ايدي زير پيام دهيد* :
