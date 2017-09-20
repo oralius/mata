@@ -552,7 +552,7 @@ if ((matches[1] == "clear cache" and not Clang) or (matches[1] == "پاک کرد
      run_bash("rm -rf ~/.telegram-cli/data/profile_photo/*")
      run_bash("rm -rf ~/.telegram-cli/data/encrypted/*")
 	 run_bash("rm -rf ./data/photos/*")
-    return "*All Cache server Has Been Cleared*"
+    return "*Cache server Has Been Cleared*"
    end
 if ((matches[1] == "visudo" and not Clang) or (matches[1] == "سودو" and Clang)) then
 if not matches[2] and msg.reply_id then
