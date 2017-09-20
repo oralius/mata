@@ -101,15 +101,15 @@ An advanced administration bot based on https://valtman.name/telegram-cli
 》Admins :
 》@oralius ➣ FounderDeveloper
 》@oralius ➣ Developer
-
+》
 》*لينك ورود براي خريد ربات*
 》https://t.me/oralius
 》Our channel :
 》@activebots
 》*براي خريد اين ربات به ايدي زير پيام دهيد* :
-
+》
 》@oralius 
-
+》
 》
 ]],
   }
