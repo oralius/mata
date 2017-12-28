@@ -3146,7 +3146,7 @@ if ((matches[1] == "whitelist" and not Clang) or (matches[1] == "لیست سفی
 return whitelist(msg.to.id)
 end
 
-if ((matches[1]:lower() == "option" and not Clang) or (matches[1] == "تنظیمات کلی" and Clang)) and is_mod(msg) then
+if ((matches[1]:lower() == "option" and not Clang) or (matches[1] == "تنظیمات کل" and Clang)) and is_mod(msg) then
 local function found_helper(TM, Beyond)
 local function inline_query_cb(TM, BD)
       if BD.results_ and BD.results_[0] then
