@@ -181,7 +181,7 @@ local lang = redis:get(hash)
   if not lang then
     return "_No_ *moderator* _in this group_"
 else
-   return "در حال حاضر هیچ مدیری برای گروه انتخاب نشده است"
+   return "*در حال حاضر هیچ مدیری برای ربات انتخاب نشده است*"
   end
 end
 if not lang then
@@ -214,7 +214,7 @@ end
  if not lang then
     return "_No_ *owner* _in this group_"
 else
-    return "در حال حاضر هیچ مالکی برای گروه انتخاب نشده است"
+    return "در حال حاضر هیچ مالکی برای ربات انتخاب نشده است"
   end
 end
 if not lang then
@@ -323,7 +323,7 @@ if administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] then
     if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already a_ *group owner*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل صاحب گروه بود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مالک ربات در این گروه بود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = user_name
@@ -331,7 +331,7 @@ administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = user_name
    if not lang then
   return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is now the_ *group owner*", 0, "md")
    else
-  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام صاحب گروه منتصب شد*", 0, "md")
+  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مالک ربات در این گروه منصوب شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -353,7 +353,7 @@ if administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] then
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already a_ *moderator*", 0, "md")
 else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر گروه بود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر ربات بود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = user_name
@@ -361,7 +361,7 @@ administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = user_name
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *promoted*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مدیر گروه منتصب شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مدیر ربات منصوب شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -383,7 +383,7 @@ if not administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] then
    if not lang then
 return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not a_ *group owner*", 0, "md")
    else
-return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* *از قبل صاحب گروه نبود*", 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* *از قبل مالک ربات در این گروه نبود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = nil
@@ -391,7 +391,7 @@ administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = nil
    if not lang then
 return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is no longer a_ *group owner*", 0, "md")
     else
-return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام صاحب گروه برکنار شد*", 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مالک ربات در این گروه برکنار شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -411,7 +411,7 @@ if not administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] then
     if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not a_ *moderator*", 0, "md")
     else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر گروه نبود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر ربات نبود*", 0, "md")
    end
   end
 administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = nil
@@ -419,7 +419,7 @@ administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = nil
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *demoted*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مدیر گروه برکنار شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مدیر ربات برکنار شد*", 0, "md")
    end
 end
 tdcli_function ({
@@ -509,7 +509,7 @@ if administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] then
     if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already a_ *group owner*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل صاحب گروه بود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مالک ربات در این گروه بود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = user_name
@@ -517,7 +517,7 @@ administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = user_name
    if not lang then
   return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is now the_ *group owner*", 0, "md")
    else
-  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام صاحب گروه منتصب شد*", 0, "md")
+  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مالک ربات در این گروه منصوب شد*", 0, "md")
    end
 end
   if cmd == "promote" then
@@ -525,7 +525,7 @@ if administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] then
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already a_ *moderator*", 0, "md")
 else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر گروه بود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر ربات بود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = user_name
@@ -533,7 +533,7 @@ administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = user_name
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *promoted*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مدیر گروه منتصب شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مدیر ربات منصوب شد*", 0, "md")
    end
 end
    if cmd == "remowner" then
@@ -541,7 +541,7 @@ if not administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] then
    if not lang then
 return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not a_ *group owner*", 0, "md")
    else
-return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* *از قبل صاحب گروه نبود*", 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* *از قبل مالک ربات در این گروه نبود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = nil
@@ -549,7 +549,7 @@ administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = nil
    if not lang then
 return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is no longer a_ *group owner*", 0, "md")
     else
-return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام صاحب گروه برکنار شد*", 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مالک ربات در این گروه برکنار شد*", 0, "md")
    end
 end
    if cmd == "demote" then
@@ -557,7 +557,7 @@ if not administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] then
     if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not a_ *moderator*", 0, "md")
     else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر گروه نبود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر ربات نبود*", 0, "md")
    end
   end
 administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = nil
@@ -565,7 +565,7 @@ administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = nil
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *demoted*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مدیر گروه برکنار شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مدیر ربات برکنار شد*", 0, "md")
    end
 end
    if cmd == "id" then
@@ -657,7 +657,7 @@ end
     if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already a_ *group owner*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل صاحب گروه بود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مالک ربات در این گروه بود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = user_name
@@ -665,7 +665,7 @@ administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = user_name
    if not lang then
   return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is now the_ *group owner*", 0, "md")
    else
-  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام صاحب گروه منتصب شد*", 0, "md")
+  return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مالک ربات در این گروه منصوب شد*", 0, "md")
    end
 end
   if cmd == "promote" then
@@ -673,7 +673,7 @@ if administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] then
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is already a_ *moderator*", 0, "md")
 else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر گروه بود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر ربات بود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = user_name
@@ -681,7 +681,7 @@ administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = user_name
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *promoted*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مدیر گروه منتصب شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *به مقام مدیر ربات منصوب شد*", 0, "md")
    end
 end
    if cmd == "remowner" then
@@ -689,7 +689,7 @@ if not administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] then
    if not lang then
 return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not a_ *group owner*", 0, "md")
    else
-return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* *از قبل صاحب گروه نبود*", 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* *از قبل مالک ربات در این گروه نبود*", 0, "md")
       end
    end
 administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = nil
@@ -697,7 +697,7 @@ administration[tostring(arg.chat_id)]['owners'][tostring(data.id_)] = nil
    if not lang then
 return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is no longer a_ *group owner*", 0, "md")
     else
-return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام صاحب گروه برکنار شد*", 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مالک ربات در این گروه برکنار شد*", 0, "md")
    end
 end
    if cmd == "demote" then
@@ -705,7 +705,7 @@ if not administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] then
     if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _is not a_ *moderator*", 0, "md")
     else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر گروه نبود*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از قبل مدیر ربات نبود*", 0, "md")
    end
   end
 administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = nil
@@ -713,7 +713,7 @@ administration[tostring(arg.chat_id)]['mods'][tostring(data.id_)] = nil
    if not lang then
     return tdcli.sendMessage(arg.chat_id, "", 0, "_User_ "..user_name.." *"..data.id_.."* _has been_ *demoted*", 0, "md")
    else
-    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مدیر گروه برکنار شد*", 0, "md")
+    return tdcli.sendMessage(arg.chat_id, "", 0, "_کاربر_ "..user_name.." *"..data.id_.."* *از مقام مدیر ربات برکنار شد*", 0, "md")
    end
 end
     if cmd == "whois" then
@@ -757,7 +757,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -786,7 +786,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -815,7 +815,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -844,7 +844,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end 
 end
 
@@ -873,7 +873,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -902,7 +902,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -931,7 +931,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -960,7 +960,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -989,7 +989,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1018,7 +1018,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -1047,7 +1047,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1076,7 +1076,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -1105,7 +1105,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1134,7 +1134,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -1163,7 +1163,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1192,7 +1192,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end 
 end
 
@@ -1221,7 +1221,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1250,7 +1250,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end 
 end
 
@@ -1279,7 +1279,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1308,7 +1308,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end 
 end
 
@@ -1337,7 +1337,7 @@ if not is_mod(msg) then
 if not lang then
  	return "_You're Not_ *Moderator*"
 else
-  return "شما مدیر گروه نمیباشید"
+  return "شما مدیر ربات نمیباشید"
 end
 end
 local data = load_data(_config.moderation.data)
@@ -1422,7 +1422,7 @@ local settings = data[tostring(target)]["settings"]
  text = "*Group Settings:*\n_Lock edit :_ *"..settings.lock_edit.."*\n_Lock links :_ *"..settings.lock_link.."*\n_Lock tags :_ *"..settings.lock_tag.."*\n_Lock flood :_ *"..settings.flood.."*\n_Lock spam :_ *"..settings.lock_spam.."*\n_Lock mention :_ *"..settings.lock_mention.."*\n_Lock arabic :_ *"..settings.lock_arabic.."*\n_Lock webpage :_ *"..settings.lock_webpage.."*\n_Lock markdown :_ *"..settings.lock_markdown.."*\n_Group welcome :_ *"..settings.welcome.."*\n_Bots protection :_ *"..settings.lock_bots.."*\n_Flood sensitivity :_ *"..NUM_MSG_MAX.."*\n*____________________*\n*we channel*: https://telegram.me/joinchat/AAAAAEOADFWjbLtUsQcJ5g\n*Group Language* : *EN*"
 else
 local settings = data[tostring(target)]["settings"] 
- text = "*تنظیمات گروه:*\n_قفل ویرایش پیام :_ *"..settings.lock_edit.."*\n_قفل لینک :_ *"..settings.lock_link.."*\n_قفل تگ :_ *"..settings.lock_tag.."*\n_قفل پیام رگباری :_ *"..settings.flood.."*\n_قفل اسپم  :_ *"..settings.lock_spam.."*\n_قفل فراخوانی :_ *"..settings.lock_mention.."*\n_قفل عربی :_ *"..settings.lock_arabic.."*\n_قفل صفحات وب :_ *"..settings.lock_webpage.."*\n_قفل فونت :_ *"..settings.lock_markdown.."*\n_پیام خوشآمد گویی :_ *"..settings.welcome.."*\n_محافظت در برابر ربات ها :_ *"..settings.lock_bots.."*\n_حداکثر پیام مجاز رگباری :_ *"..NUM_MSG_MAX.."*\n*____________________*\n*کانال ما*: https://telegram.me/joinchat/AAAAAEOADFWjbLtUsQcJ5g\n_زبان سوپرگروه_ : *FA*"
+ text = "*تنظیمات گروه:*\n_🔐قفل ویرایش پیام :_ *"..settings.lock_edit.."*\n_🔐قفل لینک :_ *"..settings.lock_link.."*\n_🔐قفل تگ :_ *"..settings.lock_tag.."*\n_🔐قفل پیام رگباری :_ *"..settings.flood.."*\n_🔐قفل اسپم  :_ *"..settings.lock_spam.."*\n_🔐قفل فراخوانی :_ *"..settings.lock_mention.."*\n_🔐قفل عربی :_ *"..settings.lock_arabic.."*\n_🔐قفل صفحات وب :_ *"..settings.lock_webpage.."*\n_🔐قفل فونت :_ *"..settings.lock_markdown.."*\n_پیام خوشآمد گویی :_ *"..settings.welcome.."*\n_محافظت در برابر ربات ها :_ *"..settings.lock_bots.."*\n_حداکثر پیام مجاز رگباری :_ *"..NUM_MSG_MAX.."*\n*____________________*\n*کانال ما*: https://telegram.me/joinchat/AAAAAEOADFWjbLtUsQcJ5g\n_زبان سوپرگروه_ : *FA*"
 end
 return text
 end
@@ -1435,7 +1435,7 @@ if not is_mod(msg) then
 if not lang then
 return "_You're Not_ *Moderator*" 
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1464,7 +1464,7 @@ if not is_mod(msg) then
 if not lang then
 return "_You're Not_ *Moderator*" 
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1494,7 +1494,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1523,7 +1523,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -1552,7 +1552,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1581,7 +1581,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end 
 end
 
@@ -1610,7 +1610,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1639,7 +1639,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -1668,7 +1668,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1697,7 +1697,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end 
 end
 
@@ -1726,7 +1726,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1755,7 +1755,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end
  
@@ -1784,7 +1784,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1813,7 +1813,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -1842,7 +1842,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1871,7 +1871,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -1900,7 +1900,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1929,7 +1929,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -1958,7 +1958,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -1987,7 +1987,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end 
 end
 
@@ -2016,7 +2016,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -2045,7 +2045,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -2074,7 +2074,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -2103,7 +2103,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -2132,7 +2132,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -2161,7 +2161,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -2190,7 +2190,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -2219,7 +2219,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نمیباشید"
+return "شما مدیر ربات نمیباشید"
 end
 end 
 
@@ -2248,7 +2248,7 @@ if not is_mod(msg) then
 if not lang then
  return "_You're Not_ *Moderator*"
 else
- return "شما مدیر گروه نمیباشید"
+ return "شما مدیر ربات نمیباشید"
 end
 end
 
@@ -2277,7 +2277,7 @@ local lang = redis:get(hash)
 if not lang then
 return "_You're Not_ *Moderator*"
 else
-return "شما مدیر گروه نیستید"
+return "شما مدیر ربات نیستید"
 end 
 end
 
@@ -2306,7 +2306,7 @@ if not is_mod(msg) then
 if not lang then
  	return "_You're Not_ *Moderator*"	
 else
- return "شما مدیر گروه نیستید"
+ return "شما مدیر ربات نیستید"
 end
 end
 local data = load_data(_config.moderation.data)
@@ -2396,7 +2396,7 @@ local mutes = data[tostring(target)]["mutes"]
  text = " *Group Mute List* : \n_Mute all : _ *"..mutes.mute_all.."*\n_Mute gif :_ *"..mutes.mute_gif.."*\n_Mute text :_ *"..mutes.mute_text.."*\n_Mute inline :_ *"..mutes.mute_inline.."*\n_Mute game :_ *"..mutes.mute_game.."*\n_Mute photo :_ *"..mutes.mute_photo.."*\n_Mute video :_ *"..mutes.mute_video.."*\n_Mute audio :_ *"..mutes.mute_audio.."*\n_Mute voice :_ *"..mutes.mute_voice.."*\n_Mute sticker :_ *"..mutes.mute_sticker.."*\n_Mute contact :_ *"..mutes.mute_contact.."*\n_Mute forward :_ *"..mutes.mute_forward.."*\n_Mute location :_ *"..mutes.mute_location.."*\n_Mute document :_ *"..mutes.mute_document.."*\n_Mute TgService :_ *"..mutes.mute_tgservice.."*\n_Mute Keyboard :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @activebots\n*Group Language* : *EN*"
 else
 local mutes = data[tostring(target)]["mutes"] 
- text = " *لیست پاک شدن* : \n_تعطیل بودن گپ : _ *"..mutes.mute_all.."*\n_پاک شدن تصاویر گيف :_ *"..mutes.mute_gif.."*\n_پاک شدن متن :_ *"..mutes.mute_text.."*\n_پاک شدن بنر شيشه اي:_ *"..mutes.mute_inline.."*\n_پاک شدن بازی ها :_ *"..mutes.mute_game.."*\n_پاک شدن عکس :_ *"..mutes.mute_photo.."*\n_پاک شدن فیلم :_ *"..mutes.mute_video.."*\n_پاک شدن آهنگ :_ *"..mutes.mute_audio.."*\n_پاک شدن صدا :_ *"..mutes.mute_voice.."*\n_پاک شدن استيكر :_ *"..mutes.mute_sticker.."*\n_پاک شدن مخاطب :_ *"..mutes.mute_contact.."*\n_پاک شدن فوروارد :_ *"..mutes.mute_forward.."*\n_پاک شدن موقعیت :_ *"..mutes.mute_location.."*\n_پاک شدن اسناد :_ *"..mutes.mute_document.."*\n_پاک شدن خدمات تلگرام :_ *"..mutes.mute_tgservice.."*\n_پاک شدن صفحه کلید :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @activebots\n_زبان سوپرگروه_ : *FA*"
+ text = " *لیست 🔐قفل رسانه ها* : \n_تعطیل بودن گپ : _ *"..mutes.mute_all.."*\n_پاک شدن تصاویر گيف :_ *"..mutes.mute_gif.."*\n_پاک شدن متن :_ *"..mutes.mute_text.."*\n_پاک شدن بنر شيشه اي:_ *"..mutes.mute_inline.."*\n_پاک شدن بازی ها :_ *"..mutes.mute_game.."*\n_پاک شدن عکس :_ *"..mutes.mute_photo.."*\n_پاک شدن فیلم :_ *"..mutes.mute_video.."*\n_پاک شدن آهنگ :_ *"..mutes.mute_audio.."*\n_پاک شدن صدا :_ *"..mutes.mute_voice.."*\n_پاک شدن استيكر :_ *"..mutes.mute_sticker.."*\n_پاک شدن مخاطب :_ *"..mutes.mute_contact.."*\n_پاک شدن فوروارد :_ *"..mutes.mute_forward.."*\n_پاک شدن موقعیت :_ *"..mutes.mute_location.."*\n_پاک شدن اسناد :_ *"..mutes.mute_document.."*\n_پاک شدن خدمات تلگرام :_ *"..mutes.mute_tgservice.."*\n_پاک شدن صفحه کلید :_ *"..mutes.mute_keyboard.."*\n*____________________*\n*Bot channel*: @activebots\n_زبان سوپرگروه_ : *FA*"
 end
 return text
 end
@@ -2988,7 +2988,7 @@ tdcli_function ({
             if not lang then
 					return "_No_ *moderators* _in this group_"
              else
-                return "هیچ مدیری برای گروه انتخاب نشده است"
+                return "*هیچ مدیری برای ربات انتخاب نشده است*"
 				end
             end
 				for k,v in pairs(data[tostring(chat)]['mods']) do
@@ -2998,7 +2998,7 @@ tdcli_function ({
             if not lang then
 				return "_All_ *moderators* _has been demoted_"
           else
-            return "تمام مدیران گروه تنزیل مقام شدند"
+            return "*تمام مدیران ربات خلع مقام شدند*"
 			end
          end
 			if ((matches[2] == 'filterlist' and not Clang) or (matches[2] == "لیست فیلتر" and Clang)) then
@@ -3078,7 +3078,7 @@ tdcli_function ({
              if not lang then
 					return "_No_ *owners* _in this group_"
             else
-                return "مالکی برای گروه انتخاب نشده است"
+                return "*مالکی برای ربات انتخاب نشده است*"
             end
 				end
 				for k,v in pairs(data[tostring(chat)]['owners']) do
@@ -3088,7 +3088,7 @@ tdcli_function ({
             if not lang then
 				return "_All_ *owners* _has been demoted_"
            else
-            return "تمامی مالکان گروه تنزیل مقام شدند"
+            return "*تمامی مالکان ربات خلع مقام شدند*"
           end
 			end
      end
@@ -3146,7 +3146,7 @@ if ((matches[1] == "whitelist" and not Clang) or (matches[1] == "لیست سفی
 return whitelist(msg.to.id)
 end
 
-if ((matches[1]:lower() == "option" and not Clang) or (matches[1] == "تنظیمات کل" and Clang)) and is_mod(msg) then
+if ((matches[1]:lower() == "opt" and not Clang) or (matches[1] == "تنظیمات کل" and Clang)) and is_mod(msg) then
 local function found_helper(TM, Beyond)
 local function inline_query_cb(TM, BD)
       if BD.results_ and BD.results_[0] then
@@ -3169,7 +3169,7 @@ if (matches[1]:lower() == "setlang" and not Clang) and is_owner(msg) then
 local hash = "gp_lang:"..msg.to.id
 if matches[2] == "fa" then
 redis:set(hash, true)
-return "*زبان گروه تنظیم شد به : فارسی*"..msg_caption
+return "*🇮🇷زبان گروه تنظیم شد به : فارسی🇮🇷*"..msg_caption
   elseif matches[2] == "en" then
  redis:del(hash)
 return "_Group Language Set To:_ EN"..msg_caption
@@ -3179,7 +3179,7 @@ if (matches[1] == 'زبان' and Clang) and is_owner(msg) then
 local hash = "gp_lang:"..msg.to.id
 if matches[2] == "فارسی" then
 redis:set(hash, true)
-return "*زبان گروه تنظیم شد به : فارسی*"..msg_caption
+return "*🇮🇷زبان گروه تنظیم شد به : فارسی🇮🇷*"..msg_caption
   elseif matches[2] == "انگلیسی" then
  redis:del(hash)
 return "_Group Language Set To:_ EN"..msg_caption
@@ -3191,7 +3191,7 @@ local hash = "cmd_lang:"..msg.to.id
 if matches[2] == "fa" then
 redis:set(hash, true)
    if lang then
-return "*زبان دستورات ربات تنظیم شد به : فارسی*"..msg_caption
+return "*🇮🇷زبان دستورات ربات تنظیم شد به : فارسی🇮🇷*"..msg_caption
 else
 return "_Bot Commands Language Set To:_ Fa"..msg_caption
 end
@@ -3202,7 +3202,7 @@ if (matches[1]:lower() == "دستورات انگلیسی" and Clang) and is_owne
 local hash = "cmd_lang:"..msg.to.id
 redis:del(hash)
    if lang then
-return "*زبان دستورات ربات تنظیم شد به : انگلیسی*"..msg_caption
+return "*🇬🇧زبان دستورات ربات تنظیم شد به : انگلیسی*"..msg_caption
 else
 return "_Bot Commands Language Set To:_ EN"..msg_caption
 end
@@ -3366,150 +3366,150 @@ text = [[
 _دستورات ربات :_
 
 *!setowner* `[username|id|reply]`
-_انتخاب مالک گروه(قابل انتخاب چند مالک)_
+_انتخاب مالک گروه(قابل انتخاب چند مالک)_✅
 
 *!remowner* `[username|id|reply]`
-_حذف کردن فرد از فهرست مالکان گروه_
+_حذف کردن فرد از فهرست مالکان گروه_✅
 
 *!promote* `[username|id|reply]`
-_ارتقا مقام کاربر به مدیر گروه_
+_ارتقا مقام کاربر به مدیر ربات_✅
 
 *!demote* `[username|id|reply]`
-_تنزیل مقام مدیر به کاربر_
+_تنزیل مقام مدیر به کاربر_✅
 
 *!setflood* `[1-50]`
-_تنظیم حداکثر تعداد پیام مکرر_
+_تنظیم حداکثر تعداد پیام رگباری_✅
 
 *!setchar* `[Number]`
-_تنظیم حداکثر کاراکتر پیام مکرر_
+_تنظیم حداکثر کاراکتر پیام رگباری_✅
 
 *!setfloodtime* `[1-10]`
-_تنظیم زمان ارسال پیام مکرر_
+_تنظیم زمان ارسال پیام رگباری_✅
 
 *!silent* `[username|id|reply]`
-_بیصدا کردن کاربر در گروه_
+_ساکت کردن کاربر در گروه_✅
 
 *!unsilent* `[username|id|reply]`
-_در آوردن کاربر از حالت بیصدا در گروه_
+_در آوردن کاربر از حالت ساکت در گروه_✅
 
 *!kick* `[username|id|reply]`
-_حذف کاربر از گروه_
+_حذف کاربر از گروه_✅
 
 *!ban* `[username|id|reply]`
-_مسدود کردن کاربر از گروه_
+_مسدود کردن کاربر از گروه_✅
 
 *!unban* `[username|id|reply]`
-_در آوردن از حالت مسدودیت کاربر از گروه_
+_در آوردن از حالت مسدودیت کاربر از گروه_✅
 
 *!whitelist* `[+|-]` `[یوزرنیم|ایدی|ریپلی]` 
-_افزودن افراد به لیست سفید_
+_افزودن افراد به لیست سفید_✅
 
 *!res* `[username]`
-_نمایش شناسه کاربر_
+_نمایش شناسه کاربر_✅
 
 *!id* `[reply]`
-نمایش شناسه کاربر
+نمایش شناسه کاربر✅
 
 *!whois* `[id]`
-_نمایش نام کاربر, نام کاربری و اطلاعات حساب_
+_نمایش نام کاربر, نام کاربری و اطلاعات حساب_✅
 
 *!lock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
-_در صورت قفل بودن فعالیت ها, ربات آنهارا حذف خواهد کرد_
+_در صورت 🔐قفل بودن فعالیت ها, ربات آنهارا حذف خواهد کرد_✅
 
 *!unlock* `[link | tag | edit | arabic | webpage | bots | spam | flood | markdown | mention | pin]`
-_در صورت قفل نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد_
+_در صورت 🔐قفل نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد_✅
 
 *!mute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
-_در صورت بیصدد بودن فعالیت ها, ربات آنهارا حذف خواهد کرد_
+_در صورت بیصدد بودن فعالیت ها, ربات آنهارا حذف خواهد کرد_✅
 
 *!unmute* `[gif | photo | document | sticker | keyboard | video | text | forward | location | audio | voice | contact | all]`
-_در صورت بیصدا نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد_
+_در صورت ساکت نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد_✅
 
 *!set*`[rules | name | photo | link | about | welcome]`
-_ربات آنهارا ثبت خواهد کرد_
+_ربات آنهارا ثبت خواهد کرد_✅
 
 *!clean* `[bans | mods | rules | about | silentlist | filterlist | welcome]`
-_ربات آنهارا پاک خواهد کرد_
+_ربات آنهارا پاک خواهد کرد_✅
 
 *!filter* `[word]`
-_فیلتر‌کلمه مورد نظر_
+_فیلتر‌کلمه مورد نظر_✅
 
 *!unfilter* `[word]`
-_ازاد کردن کلمه مورد نظر_
+_ازاد کردن کلمه مورد نظر_✅
 
 *!pin* `[reply]`
-_ربات پیام شمارا در گروه سنجاق خواهد کرد_
+_ربات پیام شمارا در گروه سنجاق خواهد کرد_✅
 
 *!unpin *
-ربات پیام سنجاق شده در گروه را حذف خواهد کرد
+ربات پیام سنجاق شده در گروه را حذف خواهد کرد✅
 
 *!welcome* `enable/disable`
-_فعال یا غیرفعال کردن خوشامد گویی_
+_فعال یا غیرفعال کردن خوشامد گویی_✅
 
 *!settings*
-_نمایش تنظیمات گروه_
+_نمایش تنظیمات گروه_✅
 
 *!mutelist*
-_نمایش فهرست بیصدا های گروه_
+_نمایش فهرست رسانه های گروه_✅
 
 *!silentlist*
-_نمایش فهرست افراد بیصدا_
+_نمایش فهرست افراد ساکت_✅
 
 *!filterlist*
-_نمایش لیست کلمات فیلتر شده_
+_نمایش لیست کلمات فیلتر شده_✅
 
 *!banlist*
-_نمایش افراد مسدود شده از گروه_
+_نمایش افراد مسدود شده از گروه_✅
 
 *!ownerlist*
-_نمایش فهرست مالکان گروه_
+_نمایش فهرست مالکان گروه_✅
 
 *!modlist*
-_نمایش فهرست مدیران گروه_
+_نمایش فهرست مدیران گروه_✅
 
 *!whitelist*
-_نمایش افراد سفید شده از گروه_
+_نمایش افراد سفید شده از گروه_✅
 
 *!rules*
-_نمایش قوانین گروه_
+_نمایش قوانین گروه_✅
 
 *!about*
-_نمایش درباره گروه_
+_نمایش درباره گروه_✅
 
 *!id*
-_نمایش شناسه شما و گروه_
+_نمایش شناسه شما و گروه_✅
 
 *!gpinfo*
-_نمایش اطلاعات گروه_
+_نمایش اطلاعات گروه_✅
 
 *!newlink*
-_ساخت لینک جدید_
+_ساخت لینک جدید_✅
 
 *!setlink*
-_تنظیم لینک جدید_
+_تنظیم لینک جدید_✅
 
 *!link*
-_نمایش لینک گروه_
+_نمایش لینک گروه_✅
 
 *!linkpv*
-_ارسال لینک گروه به چت خصوصی شما_
+_ارسال لینک گروه به چت خصوصی شما_✅
 
 *!setwelcome* `[text]`
-_ثبت پیام خوش آمد گویی_
+_ثبت پیام خوش آمد گویی_✅
 
 *!setlang* `[fa | en]`
-_تنظیم زبان ربات به فارسی یا انگلیسی_
+_تنظیم زبان ربات به فارسی یا انگلیسی_✅
 
 *!setcmd* `[fa | en]`
-_تنظیم زبان دستورات ربات به فارسی یا انگلیسی_
+_تنظیم زبان دستورات ربات به فارسی یا انگلیسی_✅
 
 *!helptools*
-_نمایش راهنمای ابزار_
+_نمایش راهنمای ابزار_✅
 
 *!helpfun*
-_نمایش راهنمای سرگرمی_
+_نمایش راهنمای سرگرمی_✅
 
-_شما میتوانید از [!/#] در اول دستورات برای اجرای آنها بهره بگیرید_
+_شما میتوانید از [!/#] در اول دستورات استفاده کنید_
 
 _این راهنما فقط برای مدیران/مالکان گروه میباشد!_
 
@@ -3572,16 +3572,16 @@ _Show User ID_
 *شناسه* `[id]`
 _Show User's Username And Name_
 
-*قفل* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |هرزنامه | پیام مکرر | فونت | فراخوانی | سنجاق]`
+*قفل* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |اسپم | پیام رگباری | فونت | فراخوانی | سنجاق]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
 
-*باز کردن* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |هرزنامه | پیام مکرر | فونت | فراخوانی | سنجاق]`
+*باز کردن* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |اسپم | پیام رگباری | فونت | فراخوانی | سنجاق]`
 _If This Actions Unlock, Bot Not Delete Them_
 
-*پاک شدن* `[همه | تصاویر متحرک | عکس | اسناد | برچسب | صفحه کلید | فیلم | متن | نقل قول | موقعیت | اهنگ | صدا | مخاطب | کیبورد شیشه ای|بازی|خدمات تلگرام]`
+*پاک شدن* `[همه | گیف | عکس | اسناد | استیکر | صفحه کلید | فیلم | متن | فوروارد | موقعیت | اهنگ | صدا | مخاطب | بنر شیشه ای|بازی|خدمات تلگرام]`
 _If This Actions Lock, Bot Check Actions And Delete Them_
 
-*پاک نشدن* `[همه | تصاویر متحرک | عکس | اسناد | برچسب | صفحه کلید | فیلم | متن | نقل قول | موقعیت | اهنگ | صدا | مخاطب | کیبورد شیشه ای|بازی|خدمات تلگرام]`
+*پاک نشدن* `[همه | گیف | عکس | اسناد | استیکر | صفحه کلید | فیلم | متن | فوروارد | موقعیت | اهنگ | صدا | مخاطب | بنر شیشه ای|بازی|خدمات تلگرام]`
 _If This Actions Unlock, Bot Not Delete Them_
 
 *تنظیم*`[قوانین | نام | لینک | درباره | خوشامد]`
@@ -3680,154 +3680,154 @@ text = [[
 *دستورات ربات :*
 
 *مالک* `[یوزرنیم|ایدی|ریپلی]` 
-_انتخاب مالک گروه(قابل انتخاب چند مالک)_
+_انتخاب مالک گروه(قابل انتخاب چند مالک)_✅
 
 *حذف مالک* `[یوزرنیم|ایدی|ریپلی]` 
- _حذف کردن فرد از فهرست مالکان گروه_
+ _حذف کردن فرد از فهرست مالکان گروه_✅
 
 *مدیر* `[یوزرنیم|ایدی|ریپلی]` 
-_ارتقا مقام کاربر به مدیر گروه_
+_ارتقا مقام کاربر به مدیر ربات_✅
 
 *حذف مدیر* `[یوزرنیم|ایدی|ریپلی]` 
-_تنزیل مقام مدیر به کاربر_
+_تنزیل مقام مدیر به کاربر_✅
 
 *رگبار* `[5 - 50]`
-_تنظیم حداکثر تعداد پیام مکرر_
+_تنظیم حداکثر تعداد پیام رگباری_✅
 
 *حداکثر حروف مجاز* `[عدد]`
-_تنظیم حداکثر کاراکتر پیام مکرر_
+_تنظیم حداکثر کاراکتر پیام رگباری_✅
 
 *تنظیم زمان بررسی* `[1-10]`
-_تنظیم زمان ارسال پیام مکرر_
+_تنظیم زمان ارسال پیام رگباری_✅
 
 *سکوت* `[یوزرنیم|ایدی|ریپلی]` 
-_بیصدا کردن کاربر در گروه_
+_ساکت کردن کاربر در گروه_✅
 
 *حذف سکوت* `[یوزرنیم|ایدی|ریپلی]` 
-_در آوردن کاربر از حالت بیصدا در گروه_
+_در آوردن کاربر از حالت ساکت در گروه_✅
 
 *اخراج* `[یوزرنیم|ایدی|ریپلی]` 
-_حذف کاربر از گروه_
+_حذف کاربر از گروه_✅
 
 *بن* `[یوزرنیم|ایدی|ریپلی]` 
-_مسدود کردن کاربر از گروه_
+_مسدود کردن کاربر از گروه_✅
 
 *حذف بن* `[یوزرنیم|ایدی|ریپلی]` 
-_در آوردن از حالت مسدودیت کاربر از گروه_
+_در آوردن از حالت مسدودیت کاربر از گروه_✅
 
 *کاربری* `[یوزرنیم]`
-_نمایش شناسه کاربر_
+_نمایش شناسه کاربر_✅
 
 *ایدی* `[ریپلی]`
-_نمایش شناسه کاربر_
+_نمایش شناسه کاربر_✅
 
 *شناسه* `[ایدی]`
-_نمایش نام کاربر, نام کاربری و اطلاعات حساب_
+_نمایش نام کاربر, نام کاربری و اطلاعات حساب_✅
 
-*قفل* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |اسپم | رگبار | فونت | فراخوانی | سنجاق]`
-*در صورت قفل بودن فعالیت ها, ربات آنهارا حذف خواهد کرد*
+*🔐قفل* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |اسپم | رگبار | فونت | فراخوانی | سنجاق]`
+✅*در صورت 🔐قفل بودن فعالیت ها, ربات آنهارا حذف خواهد کرد*
 
 *باز کردن* `[لینک | ورود | تگ | ویرایش | عربی | وب | ربات |اسپم | رگبار| فونت | فراخوانی | سنجاق]`
-*در صورت قفل نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد*
+✅*در صورت 🔐قفل نبودن فعالیت ها, ربات آنهارا حذف نخواهد کرد*
 
 *پاک شدن* [ |همه | گيف | متن | عكس | فيلم | اهنگ | صدا | استيكر | مخاطب | فوروارد | موقعيت | اسناد | خدمات تلگرام | بنرشيشه اي | بازي | بازي | صفحه كليد |]
-*در صورت پاک شدن بودن ربات موارد ارسالي را پاك ميكند*
+✅*در صورت پاک شدن بودن ربات موارد ارسالي را پاك ميكند*
 
 *پاک نشدن* `[ | همه | گيف | متن | عكس | فيلم | اهنگ | صدا | استيكر | مخاطب | فوروارد | موقعيت | اسناد | خدمات تلگرام | بنرشيشه اي | بازي | صفحه كليد ]`
-*در صورت پاک نشدن بودن ربات موارد ارسالي را پاك نميكند*
+✅*در صورت پاک نشدن بودن ربات موارد ارسالي را پاك نميكند*
 
 *تنظیم*`[قوانین | نام | لینک | درباره | خوشامد]`
-_ربات آنهارا ثبت خواهد کرد_
+_ربات آنهارا ثبت خواهد کرد_✅
 
 *پاک کردن* `[بن | مدیران | ربات | قوانین | درباره | لیست سکوت | خوشامد]`   
-_ربات آنهارا پاک خواهد کرد_
+_ربات آنهارا پاک خواهد کرد_✅
 
 *لیست سفید* `[+|-]` `[یوزرنیم|ایدی|ریپلی]` 
-_افزودن افراد به لیست سفید_
+_افزودن افراد به لیست سفید_✅
 
 *فیلتر* `[کلمه]`
-_فیلتر‌کلمه مورد نظر_
+_فیلتر‌کلمه مورد نظر_✅
 
 *حذف فیلتر* `[کلمه]`
-_ازاد کردن کلمه مورد نظر_
+_ازاد کردن کلمه مورد نظر_✅
 
 *سنجاق* `[reply]`
-_ربات پیام شمارا در گروه سنجاق خواهد کرد_
+_ربات پیام شمارا در گروه سنجاق خواهد کرد_✅
 
 *حذف سنجاق* 
-_ربات پیام سنجاق شده در گروه را حذف خواهد کرد_
+_ربات پیام سنجاق شده در گروه را حذف خواهد کرد_✅
 
 *!خوشامد فعال/غیرفعال*
-_فعال یا غیرفعال کردن خوشامد گویی_
+_فعال یا غیرفعال کردن خوشامد گویی_✅
 
 *تنظیمات*
-_نمایش تنظیمات گروه_
+_نمایش تنظیمات گروه_✅
 
 *لیست پاک شدن ها*
-_نمایش فهرست بیصدا های گروه_
+_نمایش فهرست رسانه های گروه_✅
 
 *لیست سکوت*
-_نمایش فهرست افراد بیصدا_
+_نمایش فهرست افراد ساکت_✅
 
 *لیست فیلتر*
-_نمایش لیست کلمات فیلتر شده_
+_نمایش لیست کلمات فیلتر شده_✅
 
 *لیست سفید*
-_نمایش افراد سفید شده از گروه_
+_نمایش افراد سفید شده از گروه_✅
 
 *لیست بن*
-_نمایش افراد مسدود شده از گروه_
+_نمایش افراد مسدود شده از گروه_✅
 
 *لیست مالکان*
-_نمایش فهرست مالکان گروه_ 
+_نمایش فهرست مالکان گروه_✅ 
 
 *لیست مدیران* 
-_نمایش فهرست مدیران گروه_
+_نمایش فهرست مدیران گروه_✅
 
 *قوانین*
-_نمایش قوانین گروه_
+_نمایش قوانین گروه_✅
 
 *درباره*
-_نمایش درباره گروه_
+_نمایش درباره گروه_✅
 
 *ایدی*
-_نمایش شناسه شما و گروه_
+_نمایش شناسه شما و گروه_✅
 
 *اطلاعات گروه*
-_نمایش اطلاعات گروه_
+_نمایش اطلاعات گروه_✅
 
 *لینک جدید*
-_ساخت لینک جدید_
+_ساخت لینک جدید_✅
 
 *لینک*
-_نمایش لینک گروه_
+_نمایش لینک گروه_✅
 
 *تنظیم لینک*
-_تنظیم لینک جدید برای گروه_
+_تنظیم لینک جدید برای گروه_✅
 
 *لینک خصوصی*
-_ارسال لینک گروه به چت خصوصی شما_
+_ارسال لینک گروه به چت خصوصی شما_✅
 
 *زبان انگلیسی*
-_تنظیم زبان انگلیسی_
+_تنظیم زبان انگلیسی_✅
 
 *زبان فارسی*
-_تنظیم زبان فارسی_
+_تنظیم زبان فارسی_✅
 
 *دستورات انگلیسی*
-_تنظیم دستورات انگلیسی_
+_تنظیم دستورات انگلیسی_✅
 
 *دستورات فارسی*
-_تنظیم دستورات فارسی_
+_تنظیم دستورات فارسی_✅
 
 *تنظیم خوشامد [متن]*
-_ثبت پیام خوش آمد گویی_
+_ثبت پیام خوش آمد گویی_✅
 
 *راهنمای ابزار*
-_نمایش راهنمای ابزار_
+_نمایش راهنمای ابزار_✅
 
 *راهنمای سرگرمی*
-_نمایش راهنمای سرگرمی_
+_نمایش راهنمای سرگرمی_✅
 
 _این راهنما فقط برای مدیران/مالکان گروه میباشد!
 *براي خريد ربات به ايدي زير پيام دهيد*
@@ -3984,7 +3984,7 @@ patterns ={
 "^[!/#](test)$",
 "^[!/#](add)$",
 "^[!/#](rem)$",
-"^[!/#](optio)$",
+"^[!/#](opt)$",
 "^[!/#](whitelist) ([+-])$",
 "^[!/#](whitelist) ([+-]) (.*)$",
 "^[#!/](whitelist)$",
