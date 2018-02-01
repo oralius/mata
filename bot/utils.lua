@@ -136,7 +136,7 @@ end
   if not lang then
     return tdcli.sendMessage(msg.to.id, msg.id, 0, "_All group admins has been promoted and group creator is now group owner_", 0, "md")
 else
-    return tdcli.sendMessage(msg.to.id, msg.id, 0, "_تمام ادمین های گروه به مقام مدیر منتصب شدند و سازنده گروه به مقام مالک گروه منتصب شد_", 0, "md")
+    return tdcli.sendMessage(msg.to.id, msg.id, 0, "*_تمام ادمین های گروه به مقام مدیر منصوب شدند و سازنده گروه به مقام مالک ربات منصوب شد_*", 0, "md")
      end
  end
 tdcli.getChannelMembers(msg.to.id, 0, 'Administrators', 200, config_cb, {chat_id=msg.to.id})
@@ -729,7 +729,7 @@ local lang = redis:get(hash)
   if not lang then
     return '_Group is not added_'
 else
-    return 'گروه به لیست گروه های مدیریتی ربات اضافه نشده است'
+    return '*گروه به لیست گروه های مدیریتی ربات اضافه نشده است*'
    end
   end
   -- determine if table is empty
@@ -743,7 +743,7 @@ else
        if not lang then
    message = '*List of banned users :*\n'
          else
-   message = '_لیست کاربران محروم شده از گروه :_\n'
+   message = '*_لیست کاربران محروم شده از گروه :_*\n'
      end
   for k,v in pairs(data[tostring(chat_id)]['banned']) do
     message = message ..i.. '- '..v..' [' ..k.. '] \n'
@@ -761,7 +761,7 @@ local lang = redis:get(hash)
   if not lang then
     return '_Group is not added_'
 else
-    return 'گروه به لیست گروه های مدیریتی ربات اضافه نشده است'
+    return '*گروه به لیست گروه های مدیریتی ربات اضافه نشده است*'
    end
   end
   -- determine if table is empty
@@ -775,7 +775,7 @@ else
       if not lang then
    message = '*List of silent users :*\n'
        else
-   message = '_لیست کاربران سایلنت شده :_\n'
+   message = '*_لیست کاربران سایلنت شده :_*\n'
     end
   for k,v in pairs(data[tostring(chat_id)]['is_silent_users']) do
     message = message ..i.. '- '..v..' [' ..k.. '] \n'
@@ -793,7 +793,7 @@ local lang = redis:get(hash)
   if not lang then
     return '_Group is not added_'
 else
-    return 'گروه به لیست گروه های مدیریتی ربات اضافه نشده است'
+    return '*گروه به لیست گروه های مدیریتی ربات اضافه نشده است*'
    end
   end
   if not data[tostring(chat_id)]['whitelist'] then
@@ -839,7 +839,7 @@ local lang = redis:get(hash)
         if not lang then
    message = '*List of globally banned users :*\n'
    else
-   message = '_لیست کاربران محروم شده از گروه های ربات :_\n'
+   message = '*_لیست کاربران محروم شده از گروه های ربات :_*\n'
    end
   for k,v in pairs(data['gban_users']) do
     message = message ..i.. '- '..v..' [' ..k.. '] \n'
@@ -860,7 +860,7 @@ local lang = redis:get(hash)
   if not lang then
     return '_Group is not added_'
 else
-    return 'گروه به لیست گروه های مدیریتی ربات اضافه نشده است'
+    return '*گروه به لیست گروه های مدیریتی ربات اضافه نشده است*'
    end
   end
   -- determine if table is empty
@@ -868,7 +868,7 @@ else
       if not lang then
     return "*Filtered words list* _is empty_"
       else
-    return "_لیست کلمات فیلتر شده خالی است_"
+    return "*_لیست کلمات فیلتر شده خالی است_*"
      end
   end
   if not data[tostring(msg.chat_id_)]['filterlist'] then
@@ -878,7 +878,7 @@ else
       if not lang then
        filterlist = '*List of filtered words :*\n'
          else
-       filterlist = '_لیست کلمات فیلتر شده :_\n'
+       filterlist = '*_لیست کلمات فیلتر شده :_*\n'
     end
  local i = 1
    for k,v in pairs(data[tostring(msg.chat_id_)]['filterlist']) do
