@@ -181,7 +181,7 @@ local lang = redis:get(hash)
   if not lang then
     return "_No_ *moderator* _in this group_"
 else
-   return "*در حال حاضر هیچ مدیری برای ربات انتخاب نشده است*"
+   return "در حال حاضر هیچ مدیری برای ربات انتخاب نشده است"
   end
 end
 if not lang then

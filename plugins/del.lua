@@ -49,10 +49,10 @@ end
             else
 			if not lang then  
 				tdcli.getChatHistory(msg.to.id, msg.id,0 , 100, delmsg, {msgs=matches[2]})
-				return "`"..matches[2].." `A recent message was cleared"
+				return "`"..matches[2].." `*عدد پیام مورد نظر پاکسازی شد.*براي خريد ربات به ايدي زير پيام دهيد"
 				else
 				tdcli.getChatHistory(msg.to.id, msg.id,0 , 100, delmsg, {msgs=matches[2]})
-				return "`"..matches[2].." `*پیام اخیر پاکسازی شد.*براي خريد ربات به ايدي زير پيام دهيد"
+				return "`"..matches[2].." `*عدد پیام مورد نظر پاکسازی شد.*براي خريد ربات به ايدي زير پيام دهيد"
 				end
             end
         else
