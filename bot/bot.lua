@@ -19,7 +19,7 @@ local notify = lgi.require('Notify')
 notify.init ("Telegram updates")
 chats = {}
 plugins = {}
-helper_username = 'Helper_Telecontrol_bot'  -- Input Helper Username Here Without @
+helper_username = 'id helper'  -- Input Helper Username Here Without @
 
 function do_notify (user, msg)
 	local n = notify.Notification.new(user, msg)
@@ -88,6 +88,12 @@ function create_config( )
 		"plugins",
 		"tools",
 		"fun",
+		"autolock",
+		"mutetime",
+		"del",
+		"info",
+		"rank",
+		"self",
 
 	},
     sudo_users = {108363478},
