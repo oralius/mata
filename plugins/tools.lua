@@ -597,7 +597,7 @@ tdcli_function ({
       end
    end
 end
-		if ((matches[1] == "config" and not Clang) or (matches[1] == "پیکربندی" and Clang)) and is_admin(msg) then
+		if ((matches[1] == "config" and not Clang) or (matches[1] == "کانفیگ" and Clang)) and is_admin(msg) then
 			return set_config(msg)
 		end
 if is_sudo(msg) then
@@ -608,7 +608,7 @@ if is_sudo(msg) then
 					redis:set('CheckExpire::'..msg.to.id,true)
 				end
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_*گروه به مدت 3 دقیقه برای ثبت ربات شارژ شد*._', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, '*_گروه به مدت 3 دقیقه برای ثبت ربات شارژ شد._*', 1, 'md')
 				else
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_Group charged 3 minutes  for settings._', 1, 'md')
 				end
@@ -1570,7 +1570,7 @@ _Save plugin by reply_
 *ذخیره فایل* `[مسیر/اسم فایل] [reply]`
 _Save File by reply to specific folder_
 
-*پیکربندی*
+*کانفیگ*
 _Set Owner and Admin Group as Moderator_
 
 *پاک کردن حافظه*
@@ -1680,7 +1680,7 @@ _ذخیره کردن پلاگین_
 *ذخیره فایل* `[address/filename] [reply]`
 _ذخیره کردن فایل در پوشه مورد نظر_
 
-*پیکربندی*
+*کانفیگ*
 _اضافه کردن سازنده و مدیران گروه به مدیریت ربات_
 
 *پاک کردن حافظه*
@@ -1762,7 +1762,7 @@ patterns = {
 "^[!/#]([Ll]eave) (-%d+)$",
 "^[!/#]([Pp]lan) ([123]) (-%d+)$",
 "^[!/#]([Rr]em)$",
-	"^(پیکربندی)$",
+	"^(کانفیگ)$",
 	"^(افزودن)$",
 	"^(حذف گروه)$",
     "^(حذف گروه) (-%d+)$",	
