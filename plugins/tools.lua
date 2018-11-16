@@ -597,23 +597,23 @@ tdcli_function ({
       end
    end
 end
-		if ((matches[1] == "config" and not Clang) or (matches[1] == "کانفیگ" and Clang)) and is_admin(msg) then
+		if ((matches[1] == "config" and not Clang) or (matches[1] == "پیکربندی" and Clang)) and is_admin(msg) then
 			return set_config(msg)
 		end
 if is_sudo(msg) then
-   		if ((matches[1]:lower() == 'add' and not Clang) or (matches[1] == "افزودن" and Clang)) and not redis:get('ExpireDate:'..msg.to.id) then
+   		if ((matches[1]:lower() == 'add' and not Clang) or (matches[1] == "ادد" and Clang)) and not redis:get('ExpireDate:'..msg.to.id) then
 			redis:set('ExpireDate:'..msg.to.id,true)
 			redis:setex('ExpireDate:'..msg.to.id, 180, true)
 				if not redis:get('CheckExpire::'..msg.to.id) then
 					redis:set('CheckExpire::'..msg.to.id,true)
 				end
 				if lang then
-					tdcli.sendMessage(msg.to.id, msg.id_, 1, '*_گروه به مدت 3 دقیقه برای ثبت ربات شارژ شد._*', 1, 'md')
+					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_*گروه به مدت 3 دقیقه برای ثبت ربات شارژ شد*._', 1, 'md')
 				else
 					tdcli.sendMessage(msg.to.id, msg.id_, 1, '_Group charged 3 minutes  for settings._', 1, 'md')
 				end
 		end
-		if ((matches[1] == 'rem' and not Clang) or (matches[1] == "حذف گروه" and Clang)) then
+		if ((matches[1] == 'rem' and not Clang) or (matches[1] == "حذف ربات" and Clang)) then
 			if redis:get('CheckExpire::'..msg.to.id) then
 				redis:del('CheckExpire::'..msg.to.id)
 			end
@@ -1211,12 +1211,12 @@ return sudolist(msg)
 if ((matches[1] == 'chats' and not Clang) or (matches[1] == "لیست گروه ها" and Clang)) and is_admin(msg) then
 return chat_list(msg)
     end
-   if ((matches[1]:lower() == 'join' and not Clang) or (matches[1] == "افزودن" and Clang)) and is_admin(msg) and matches[2] then
+   if ((matches[1]:lower() == 'join' and not Clang) or (matches[1] == "ادد" and Clang)) and is_admin(msg) and matches[2] then
 	   tdcli.sendMessage(msg.to.id, msg.id, 1, 'I Invite you in '..matches[2]..'', 1, 'html')
 	   tdcli.sendMessage(matches[2], 0, 1, "Admin Joined!🌚", 1, 'html')
     tdcli.addChatMember(matches[2], msg.from.id, 0, dl_cb, nil)
   end
-		if ((matches[1] == 'rem' and not Clang) or (matches[1] == "حذف گروه" and Clang)) and matches[2] and is_admin(msg) then
+		if ((matches[1] == 'rem' and not Clang) or (matches[1] == "حذف ربات" and Clang)) and matches[2] and is_admin(msg) then
     local data = load_data(_config.moderation.data)
 			-- Group configuration removal
 			data[tostring(matches[2])] = nil
@@ -1419,7 +1419,7 @@ _لیست گروه های مدیریتی ربات_
 _جوین شدن توسط ربات_
 
 *!rem* `[GroupID]`
-_حذف گروه ازطریق پنل مدیریتی_
+_حذف ربات ازطریق پنل مدیریتی_
 
 *!import* `[link]`
 _جوین شدن ربات توسط لینک_
@@ -1531,7 +1531,7 @@ _Convert to supergroup_
 *لیست گروه ها*
 _List of added groups_
 
-*افزودن* `[id]`
+*ادد* `[id]`
 _Adds you to the group_
 
 *حذف ربات* `[id]`
@@ -1570,7 +1570,7 @@ _Save plugin by reply_
 *ذخیره فایل* `[مسیر/اسم فایل] [reply]`
 _Save File by reply to specific folder_
 
-*کانفیگ*
+*پیکربندی*
 _Set Owner and Admin Group as Moderator_
 
 *پاک کردن حافظه*
@@ -1641,11 +1641,11 @@ _تبدیل به سوپر گروه_
 *لیست گروه ها*
 _لیست گروه های مدیریتی ربات_
 
-*افزودن* `[ایدی گروه]`
+*ادد* `[ایدی گروه]`
 _جوین شدن توسط ربات_
 
-*حذف گروه* `[ایدی گروه]`
-_حذف گروه ازطریق پنل مدیریتی_
+*حذف ربات* `[ایدی گروه]`
+_حذف ربات ازطریق پنل مدیریتی_
 
 *ورود لینک* `[لینک_]`
 _جوین شدن ربات توسط لینک_
@@ -1680,7 +1680,7 @@ _ذخیره کردن پلاگین_
 *ذخیره فایل* `[address/filename] [reply]`
 _ذخیره کردن فایل در پوشه مورد نظر_
 
-*کانفیگ*
+*پیکربندی*
 _اضافه کردن سازنده و مدیران گروه به مدیریت ربات_
 
 *پاک کردن حافظه*
@@ -1762,10 +1762,10 @@ patterns = {
 "^[!/#]([Ll]eave) (-%d+)$",
 "^[!/#]([Pp]lan) ([123]) (-%d+)$",
 "^[!/#]([Rr]em)$",
-	"^(کانفیگ)$",
-	"^(افزودن)$",
-	"^(حذف گروه)$",
-    "^(حذف گروه) (-%d+)$",	
+	"^(پیکربندی)$",
+	"^(ادد)$",
+	"^(حذف ربات)$",
+    "^(حذف ربات) (-%d+)$",	
     "^(راهنمای ابزار)$",
 	"^(لیست سودو)$",
 	"^(اطلاعات)$",
@@ -1801,7 +1801,7 @@ patterns = {
     "^(ذخیره پلاگین) (.*)$",
     "^(تیک دوم) (.*)$",
     "^(ارسال) +(.*) (-%d+)$",
-	"^(افزودن) (-%d+)$",
+	"^(ادد) (-%d+)$",
 	"^(پاک کردن حافظه)$",
 	"^(سیلاس)$",
 }, 

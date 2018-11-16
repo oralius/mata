@@ -26,24 +26,24 @@ local function list_all_plugins(only_enabled, msg)
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
-    --  ✔ enabled, ❌ disabled
-    local status = '|✖️|>'
+    --  ✅ enabled, ❌ disabled
+    local status = '|❌️|>'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '|✔|>'
+        status = '|✅|>'
       end
       nact = nact+1
     end
-    if not only_enabled or status == '|✔|>'then
+    if not only_enabled or status == '|✅|>'then
       -- get the name
       v = string.match (v, "(.*)%.lua")
       text = text..nsum..'.'..status..' '..v..' \n'
     end
   end
-  text = '<code>'..text..'</code>\n\n'..nsum..' <b>📂plugins installed</b>\n\n'..nact..' <i>✔️plugins enabled</i>\n\n'..nsum-nact..' <i>❌plugins disabled</i>'..tmp
+  text = '<code>'..text..'</code>\n\n'..nsum..' <b>🆗plugins installed</b>\n\n'..nact..' <i>✅️plugins enabled</i>\n\n'..nsum-nact..' <i>❌plugins disabled</i>'..tmp
   tdcli.sendMessage(msg.to.id, msg.id_, 1, text, 1, 'html')
 end
 
@@ -51,24 +51,24 @@ local function list_plugins(only_enabled, msg)
   local text = ''
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
-    --  ✔ enabled, ❌ disabled
-    local status = '*|✖️|>*'
+    --  ✅ enabled, ❌ disabled
+    local status = '*|❌️|>*'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
     for k2, v2 in pairs(_config.enabled_plugins) do
       if v == v2..'.lua' then 
-        status = '*|✔|>*'
+        status = '*|✅|>*'
       end
       nact = nact+1
     end
-    if not only_enabled or status == '*|✔|>*'then
+    if not only_enabled or status == '*|✅|>*'then
       -- get the name
       v = string.match (v, "(.*)%.lua")
      -- text = text..v..'  '..status..'\n'
     end
   end
-  text = "\n_🔃All Plugins Reloaded_\n\n"..nact.." *✔️Plugins Enabled*\n"..nsum.." *📂Plugins Installed*\n"..msg_caption
+  text = "\n_🔃All Plugins Reloaded_\n\n"..nact.." *✅️Plugins Enabled*\n"..nsum.." *🆗Plugins Installed*\n"..msg_caption
   tdcli.sendMessage(msg.to.id, msg.id_, 1, text, 1, 'md')
 end
 

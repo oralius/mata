@@ -2410,7 +2410,7 @@ local data = load_data(_config.moderation.data)
 local chat = msg.to.id
 local user = msg.from.id
 if msg.to.type ~= 'pv' then
-if ((matches[1] == "add" and not Clang) or (matches[1] == "افزودن" and Clang)) then
+if ((matches[1] == "add" and not Clang) or (matches[1] == "ادد" and Clang)) then
 return modadd(msg)
 end
 if ((matches[1] == "rem" and not Clang) or (matches[1] == "حذف ربات" and Clang)) then
@@ -2988,7 +2988,7 @@ tdcli_function ({
             if not lang then
 					return "_No_ *moderators* _in this group_"
              else
-                return "*هیچ مدیری برای ربات انتخاب نشده است*"
+                return "هیچ مدیری برای گروه انتخاب نشده است"
 				end
             end
 				for k,v in pairs(data[tostring(chat)]['mods']) do
@@ -2998,7 +2998,7 @@ tdcli_function ({
             if not lang then
 				return "_All_ *moderators* _has been demoted_"
           else
-            return "*تمام مدیران ربات خلع مقام شدند*"
+            return "تمام مدیران گروه تنزیل مقام شدند"
 			end
          end
 			if ((matches[2] == 'filterlist' and not Clang) or (matches[2] == "لیست فیلتر" and Clang)) then
@@ -3078,7 +3078,7 @@ tdcli_function ({
              if not lang then
 					return "_No_ *owners* _in this group_"
             else
-                return "*مالکی برای ربات انتخاب نشده است*"
+                return "مالکی برای گروه انتخاب نشده است"
             end
 				end
 				for k,v in pairs(data[tostring(chat)]['owners']) do
@@ -3088,7 +3088,7 @@ tdcli_function ({
             if not lang then
 				return "_All_ *owners* _has been demoted_"
            else
-            return "*تمامی مالکان ربات خلع مقام شدند*"
+            return "تمامی مالکان گروه تنزیل مقام شدند"
           end
 			end
      end
@@ -4037,7 +4037,7 @@ patterns ={
 '^(تنظیمات کل)$',
 '^(سنجاق)$',
 '^(حذف سنجاق)$',
-'^(افزودن)$',
+'^(ادد)$',
 '^(حذف ربات)$',
 '^(ادمین گروه)$',
 '^(ادمین گروه) (.*)$',
