@@ -19,7 +19,7 @@ local notify = lgi.require('Notify')
 notify.init ("Telegram updates")
 chats = {}
 plugins = {}
-helper_username = 'id helper'  -- Input Helper Username Here Without @
+helper_username = 'Helper_active_bot'  -- Input Helper Username Here Without @
 
 function do_notify (user, msg)
 	local n = notify.Notification.new(user, msg)
@@ -88,12 +88,6 @@ function create_config( )
 		"plugins",
 		"tools",
 		"fun",
-		"autolock",
-		"mutetime",
-		"del",
-		"info",
-		"rank",
-		"self",
 
 	},
     sudo_users = {108363478},
@@ -103,20 +97,20 @@ function create_config( )
     info_text = [[》bot v6.0
 An advanced administration bot based on https://valtman.name/telegram-cli
 
-》https://github.com/oralius/anti
-
+》https://github.com/oralius/anti.*ربات ضد لينك و ضد تبليغات در گروهها با قابليت قفل كامل چت و تمام موارد ارسالي.*
 》Admins :
-》@oralius ➣ Founder & Developer《
-》@oralius ➣ Developer《
-
-》Special thanks to
+》@oralius ➣ FounderDeveloper
+》@oralius ➣ Developer
 》
-
+》*لينك ورود براي خريد ربات*
+》https://t.me/oralius
 》Our channel :
 》@activebots
-
-》Our website :
-》http://lua.org
+》*براي خريد اين ربات به ايدي زير پيام دهيد* :
+》
+》@oralius 
+》
+》
 ]],
   }
 	serialize_to_file(config, './data/config.lua')
